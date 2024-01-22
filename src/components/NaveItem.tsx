@@ -3,6 +3,7 @@ import { PRODUCT_CATEGORIES } from "@/config";
 import { Button } from "./ui/button";
 import { ChevronDown, Link } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type Category = typeof PRODUCT_CATEGORIES[number]
 
@@ -37,17 +38,15 @@ const NaveItem = ({isAnyOpen,category,handleOpen, isOpen}: NaveItemsProps) => {
                       key={item.name}
                       className='group relative text-base sm:text-sm'>
                       <div className='relative aspect-video overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75'>
-                        {/* <Image
+                        <Image
                           src={item.imageSrc}
                           alt='product category image'
                           fill
                           className='object-cover object-center'
-                        /> */}
+                        />
                       </div>
 
-                      <Link
-                        href={item.href}
-                        className='mt-6 block font-medium text-gray-900'>
+                      <Link href={item.href} className='mt-6 block font-medium text-gray-900'>
                         {item.name}
                       </Link>
                       <p
